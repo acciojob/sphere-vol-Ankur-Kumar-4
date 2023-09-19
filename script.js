@@ -1,11 +1,18 @@
-function volume_sphere() {
+document.getElementById("MyForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form submission
+
+  
     const radius = parseFloat(document.getElementById("radius").value);
 
-    const vol = (4 / 3) * Math.PI * Math.pow(radius, 3);
+    // Check if the input is a valid number
+    if (isNaN(radius)) {
+        alert("Please enter a valid number for the radius.");
+        return;
+    }
 
-    document.getElementById("volume").value = vol.toFixed(2); // Round to 2 decimal places
-}
+  
+    const volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
 
-window.onload = function () {
-    document.getElementById('MyForm').onsubmit = volume_sphere;
-};
+   
+    document.getElementById("volume").value = volume.toFixed(2); // Rounded to 2 decimal places
+});
