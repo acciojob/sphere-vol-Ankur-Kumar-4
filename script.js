@@ -1,12 +1,11 @@
 function volume_sphere() {
+    const radius = parseFloat(document.getElementById("radius").value);
 
-	const radius = parseInt(document.getElementById("radius").value);
+    const vol = (4 / 3) * Math.PI * Math.pow(radius, 3);
 
-	const vol = (4/3)*Math.PI*Math.pow(radius,3);
+    document.getElementById("volume").value = vol.toFixed(2); // Round to 2 decimal places
+}
 
-    document.getElementById("volume").value= vol ;
-	
-  
-} 
-
-window.onload = document.getElementById('MyForm').onsubmit = volume_sphere;
+window.onload = function () {
+    document.getElementById('MyForm').onsubmit = volume_sphere;
+};
