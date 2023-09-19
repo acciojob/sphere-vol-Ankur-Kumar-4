@@ -14,5 +14,5 @@ document.getElementById("MyForm").addEventListener("submit", function (event) {
     const volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
 
    
-    document.getElementById("volume").value = volume.toFixed(2); // Rounded to 2 decimal places
+    document.getElementById("volume").value = volume // Rounded to 2 decimal places
 });
